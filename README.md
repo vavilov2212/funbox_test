@@ -6,7 +6,8 @@ Defaults are:<br>
 `redis_port: "6379"`
 
 You can execute the following to download and start Redis server with the above prerequisites<br>
-`bash install_run_redis.sh`
+`bash install.sh`<br>
+`cd redis-5.0.8 && src/redis-server`
 
 Database record keys are prefixed with 'funbox_test.'
 
