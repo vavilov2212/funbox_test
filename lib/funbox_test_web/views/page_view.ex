@@ -2,14 +2,12 @@ defmodule FunboxTestWeb.PageView do
   use FunboxTestWeb, :view
 
   def render("index.json", %{status: status}) do
-    %{
-      status: status
-      # links: Enum.map(links, &links_json/1)
-    }
+    %{ status: status }
   end
 
   def render("domains.json", %{domains: domains, status: status }) do
-    %{domains: domains, 
+    %{
+      domains: domains, 
       status: status
     }
   end

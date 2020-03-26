@@ -5,5 +5,5 @@ defmodule FunboxTestWeb.StatusCodes do
   def bad_request(), do: "Bad request" 
   def page_not_found(), do: "Page not found"
   def interanl_error(), do: "Server internal error"
-  def params_error(), do: "error. GET parameter 'from' is greater then 'to'"
+  def params_error(), do: "Error. Wrong parameters"
 end

@@ -25,19 +25,20 @@ defmodule FunboxTestWeb.PageControllerTest do
     conn = get(conn, "/visited_domains", params)
     assert json_response(conn, 200) == %{ 
       "domains" => [
-        "record1",
-        "record2",
-        "record3"
+        "somelink1",
+        "somelink2",
+        "somelink3"
       ],
       "status" => "ok" }
   end
 
   test "GET /visited_domains with params error" do
     conn = build_conn()
-    params = %{from: "3", to: "1"}
-
-    conn = get(conn, "/visited_domains", params)
-    assert json_response(conn, 200) == %{ "status" => params_error() }
+    params = %{"from" => "3"}
+    assert_raise MatchError, fn ->
+      conn = get(conn, "/visited_domains", params)
+      assert json_response(conn, 200) == %{ "status" => params_error() }
+    end
   end
 
 end

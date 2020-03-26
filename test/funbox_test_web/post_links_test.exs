@@ -51,7 +51,7 @@ defmodule FunboxTestWeb.PostLinksTest do
     params = trim_body(params)
     params = params |> Enum.map(&trim_uri/1) |> Enum.uniq()
     assert save_links(params, time_key) == :ok 
-    assert retrieve_links(time_key) == params 
+    assert retrieve_links("funbox_test." <> to_string(time_key)) == params 
   end
 
   def retrieve_links(time_key) do

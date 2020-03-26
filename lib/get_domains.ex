@@ -7,7 +7,7 @@ defmodule FunboxTestWeb.GetDomains do
   def get_all_records(params) do
     {:ok, r_conn} = Redix.start_link()
     domains_list = Enum.reduce(from(params)..to(params), [], fn i, acc ->
-      {:ok, domains} = Redix.command(r_conn, ["LRANGE", i, 0, -1])
+      {:ok, domains} = Redix.command(r_conn, ["LRANGE", "funbox_test." <> to_string(i), 0, -1])
       acc = acc ++ domains
     end)
     Redix.stop(r_conn)
@@ -24,4 +24,5 @@ defmodule FunboxTestWeb.GetDomains do
     [from | to] = Map.values(params)
     if is_binary(from), do: String.to_integer(from), else: from
   end
+
 end

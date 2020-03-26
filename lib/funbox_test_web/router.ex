@@ -21,8 +21,7 @@ defmodule FunboxTestWeb.Router do
     get "/visited_domains", PageController, :visited_domains
   end
 
-  defp handle_errors(conn, something) do
-    IO.inspect something
+  defp handle_errors(_conn, _data) do
     FunboxTestWeb.ErrorView.render("", %{})
   end
   # Other scopes may use custom stacks.

@@ -26,8 +26,7 @@ defmodule FunboxTestWeb.PostLinks do
 
   def save_links(params, time_key) do
     {:ok, r_conn} = Redix.start_link()
-    IO.inspect params
-    params |> Enum.reverse() |> Enum.each(fn param -> Redix.command(r_conn, ["LPUSH", time_key, param]) end)
+    params |> Enum.reverse() |> Enum.each(fn param -> Redix.command(r_conn, ["LPUSH", "funbox_test." <> to_string(time_key), param]) end)
     # Redix.command!(r_conn, ["SET", time_key, params])
     Redix.stop(r_conn)
   end

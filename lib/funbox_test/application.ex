@@ -15,8 +15,6 @@ defmodule FunboxTest.Application do
       # {FunboxTest.Worker, arg},
       {Redix, host: Application.fetch_env!(:funbox_test, :redis_host), 
         port: Application.fetch_env!(:funbox_test, :redis_port)|> String.to_integer(), name: :redix},
-      # Check DB connection and populate test data
-      worker(Task, [&FunboxTestWeb.TestData.populate/0], restart: :temporary) 
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
