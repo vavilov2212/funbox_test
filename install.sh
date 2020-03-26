@@ -8,6 +8,5 @@ else
     cd redis-5.0.8
     make
     cd .. && rm -rf redis-5.0.8.tar.gz
-    redis-5.0.8/src/redis-server
 fi
 
