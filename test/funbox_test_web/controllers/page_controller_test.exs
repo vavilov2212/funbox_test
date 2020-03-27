@@ -4,7 +4,7 @@ defmodule FunboxTestWeb.PageControllerTest do
 
   test "POST /visited_links ok" do
     conn = build_conn()
-    links = %{"links" => ["link1", "link2", "link3", "link3"]} 
+    links = %{"links" => ["somelink1", "somelink2", "somelink3", "somelink3"]} 
 
     conn = post(conn, "/visited_links", links)
     assert json_response(conn, 200) == %{ "status" => ok() }
@@ -12,7 +12,7 @@ defmodule FunboxTestWeb.PageControllerTest do
 
   test "POST /visited_links error" do
     conn = build_conn()
-    links = %{"links" => ["link3", 123, "link3"]} 
+    links = %{"links" => ["somelink3", 123, "somelink3"]} 
 
     conn = post(conn, "/visited_links", links)
     assert json_response(conn, 200) == %{ "status" => error() }

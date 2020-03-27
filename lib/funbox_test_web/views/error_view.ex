@@ -4,19 +4,19 @@ defmodule FunboxTestWeb.ErrorView do
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.
   def render("400.json", _assigns) do
-    %{"status": "Bad request"}
+    %{status: "Bad request"}
   end
 
   def render("404.json", _assigns) do
-    %{"status": "Page not found"}
+    %{status: "Page not found"}
   end
 
   def render("500.json", _assigns) do
-    %{"status": "Server internal error"}
+    %{status: "Server internal error"}
   end
 
-  def render(code, assigns) do
-    %{"status": "error"}
+  def render(_code, _assigns) do
+    %{status: "error"}
   end
 
   # By default, Phoenix returns the status message from

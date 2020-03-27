@@ -46,7 +46,7 @@ defmodule FunboxTestWeb.PostLinksTest do
   end
 
   test "save links to database and assert retrieved values are correct ok" do
-    time_key = DateTime.utc_now() |> DateTime.to_unix()
+    time_key = 4 
     params = gen_req_body(true)
     params = trim_body(params)
     params = params |> Enum.map(&trim_uri/1) |> Enum.uniq()

@@ -7,13 +7,13 @@ defmodule FunboxTestWeb.PostLinks do
     end)
     |> case do
       :break -> error()
-      params -> ok() 
+      _params -> ok() 
     end
   end
 
   def trim_uri(param) do
     uri = URI.parse(param)
-    uri = cond do
+    cond do
       uri.host == nil -> uri.path
       true -> uri.host
     end
