@@ -12,19 +12,19 @@ defmodule FunboxTestWeb.ErrorViewTest do
 
   test "renders 404.json" do
     rendered_response = render("404.json", %{status() => page_not_found()})
-    assert rendered_response == %{ status: "Page not found" }
+    assert rendered_response == %{ status: page_not_found() }
   end
   test "renders 400.json" do
     rendered_response = render("400.json", %{status() => bad_request()})
-    assert rendered_response == %{ status: "Bad request" }
+    assert rendered_response == %{ status: bad_request() }
   end
   test "renders 500.json" do
     rendered_response = render("500.json", %{status() => interanl_error()})
-    assert rendered_response == %{ status: "Server internal error" }
+    assert rendered_response == %{ status: bad_request() }
   end
 
   test "renders index.json error" do
     rendered_response = render("index.json", %{status() => error()})
-    assert rendered_response == %{ status: "error" }
+    assert rendered_response == %{ status: error() }
   end
 end
