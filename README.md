@@ -17,8 +17,6 @@ To start Phoenix server:
   * Install Node.js dependencies with `cd assets && npm install`
   * Start Phoenix endpoint with `mix phx.server`
   
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
 To run tests execute<br>
 `mix test`<br>
 It will automaticly populate test data to database in order for tests to succeed.
