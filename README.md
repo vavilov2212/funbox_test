@@ -1,4 +1,4 @@
-# FunboxTest
+# FunboxTest for Elixir developers
 
 Variables needed to connect application to running Redis server are defined in `/config/dev.secret.exs`<br>
 Defaults are:<br>
@@ -37,11 +37,3 @@ Data example:<br>
 Content-Type "application/json" 
 
  - GET [/visited_domains?from={timestamp_in_seconds}&to={timestamp_in_seconds}]()<br>
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
